@@ -70,8 +70,9 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 sm:h-80 object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+                  className="w-full h-auto max-h-80 sm:max-h-[22rem] object-contain rounded-xl transition-transform duration-500 hover:scale-105"
                 />
+
               </div>
 
               {/* Project Content */}
