@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, Instagram } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -22,7 +22,7 @@ const Contact = () => {
             <Mail size={20} /> jafarputhiry@gmail.com
           </a>
           <a
-            href="https://www.linkedin.com/in/jafar-sadiq-35b599"
+            href="https://www.linkedin.com/in/jafar-sadiq-35b599262"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-blue-600 hover:underline"
@@ -37,6 +37,14 @@ const Contact = () => {
           >
             <Github size={20} /> GitHub
           </a>
+          <a
+            href="https://instagram.com/jafar-ctcl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-blue-600 hover:underline"
+          >
+            <Instagram size={20} />Instagram
+          </a>  
         </div>
       </div>
     </section>
