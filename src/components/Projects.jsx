@@ -52,75 +52,73 @@ const projects = [
 
 const Projects = () => {
   return (
-<section id="projects" className="bg-[#0a0a0a] py-24 px-4 sm:px-6 lg:px-8 text-white">
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-500 mb-16">
-      My Projects
-    </h2>
+    <section id="projects" className="bg-[#0a0a0a] py-24 px-4 sm:px-6 lg:px-8 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-500 mb-16">
+          My Projects
+        </h2>
 
-    <div className="space-y-20">
-      {projects.map((project, index) => (
-        <div
-          key={index}
-          className={`flex flex-col lg:flex-row ${
-            index % 2 === 1 ? "lg:flex-row-reverse" : ""
-          } items-center gap-10 bg-[#111] p-6 sm:p-10 rounded-3xl shadow-lg hover:shadow-2xl transition`}
-        >
-          {/* Image */}
-          <div className="lg:w-1/2 w-full overflow-hidden rounded-xl">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-64 sm:h-80 object-cover rounded-xl transform hover:scale-105 transition duration-500 ease-in-out"
-            />
-          </div>
+        <div className="space-y-20">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className={`flex flex-col lg:flex-row ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                } items-center gap-10 bg-[#111] p-6 sm:p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all`}
+            >
+              {/* Project Image */}
+              <div className="w-full lg:w-1/2">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 sm:h-80 object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+                />
+              </div>
 
-          {/* Content */}
-          <div className="lg:w-1/2 w-full text-center lg:text-left">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-white">
-              {project.title}
-            </h3>
-            <p className="text-gray-300 text-sm sm:text-base mb-4">
-              {project.description}
-            </p>
+              {/* Project Content */}
+              <div className="w-full lg:w-1/2 text-center lg:text-left">
+                <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 text-sm sm:text-base mb-6">
+                  {project.description}
+                </p>
 
-            {/* Tech Stack */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
-              {project.stack.map((tech, i) => (
-                <span
-                  key={i}
-                  className="text-xs bg-gradient-to-r from-blue-700 to-blue-400 text-white px-3 py-1 rounded-full font-medium shadow-md"
-                >
-                  {tech}
-                </span>
-              ))}
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
+                  {project.stack.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-xs bg-gradient-to-r from-blue-700 to-blue-400 text-white px-3 py-1 rounded-full font-medium shadow-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex justify-center lg:justify-start gap-6">
+                  <a
+                    href={project.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 text-sm transition-colors duration-300"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-400 hover:text-green-300 text-sm transition-colors duration-300"
+                  >
+                    Live Demo
+                  </a>
+                </div>
+
+              </div>
             </div>
-
-            {/* Links */}
-            <div className="flex justify-center lg:justify-start gap-6">
-              <a
-                href={project.code}
-                className="text-blue-400 hover:underline text-sm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                href={project.demo}
-                className="text-green-400 hover:underline text-sm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Live Demo
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
+
 
   );
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
@@ -11,43 +11,51 @@ const Navbar = () => {
     { name: "Contact", href: "#contact" },
   ];
 
-  return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/5 backdrop-blur-md shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-white tracking-wide">Jafar</h1>
+  // Optional: Close menu when scrolling
+  useEffect(() => {
+    const closeOnScroll = () => setIsOpen(false);
+    window.addEventListener("scroll", closeOnScroll);
+    return () => window.removeEventListener("scroll", closeOnScroll);
+  }, []);
 
-        {/* Desktop Navigation */}
+  return (
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/70 backdrop-blur-md shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <h1 className="text-xl font-bold text-white tracking-wide">
+          Jafar
+        </h1>
+
+        {/* Desktop Nav */}
         <nav className="hidden md:flex gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm text-gray-300 hover:text-white font-medium relative transition"
+              className="text-sm text-gray-300 hover:text-white font-medium transition"
             >
-              <span className="relative z-10">{link.name}</span>
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+              {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Navigation"
+          className="md:hidden text-white"
+          aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-[#121212] px-6 py-4 space-y-3">
+        <div className="md:hidden bg-[#121212] px-4 sm:px-6 lg:px-8 py-4 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="block text-gray-300 hover:text-white text-sm font-medium transition"
+              className="block text-gray-300 hover:text-white text-base font-medium transition"
               onClick={() => setIsOpen(false)}
             >
               {link.name}

@@ -41,13 +41,14 @@ const Hero = () => {
           </a>
 
           <a
-            href="/resume.pdf"
+            href="resume.pdf"
             download
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300"
           >
             <Download className="w-5 h-5" />
             Download Resume
           </a>
+
         </motion.div>
       </div>
     </section>
