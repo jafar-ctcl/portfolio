@@ -5,8 +5,9 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-[#0a0a0a] text-gray-100 px-6"
+      className="min-h-screen flex items-center justify-center bg-[#0a0a0a] text-gray-100 px-6 pt-20 md:pt-24"
     >
+
       <div className="max-w-4xl text-center">
         <motion.h1
           className="text-5xl md:text-7xl font-extrabold leading-tight mb-6"
