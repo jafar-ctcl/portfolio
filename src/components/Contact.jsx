@@ -35,7 +35,7 @@ const Contact = () => {
             <Github size={20} /> GitHub
           </a>
           <a
-            href="https://instagram.com/jafar_ctcl"
+            href="https://instagram.com/s4diq_pa"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition"
