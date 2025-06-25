@@ -65,7 +65,7 @@ const Projects = () => {
       id="projects"
       className="bg-[#0a0a0a] py-24 px-4 sm:px-6 lg:px-8 text-white"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.h2
           className="text-4xl md:text-5xl font-bold text-center text-blue-500 mb-16"
           initial={{ opacity: 0, y: -40 }}
