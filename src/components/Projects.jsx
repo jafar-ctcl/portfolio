@@ -39,7 +39,7 @@ const projects = [
       "YouTube UI replica featuring video browsing, channels, search, and player using RapidAPI.",
     stack: ["React", "Bootstrap", "RapidAPI", "React Router"],
     image: youtube,
-    demo: "https://github.com/jafar-ctcl",
+    demo: "https://youtube-clone-eyn5.vercel.app/",
     code: "https://github.com/jafar-ctcl/Youtube-clone",
   },
 ];
