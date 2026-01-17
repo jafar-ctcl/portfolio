@@ -42,7 +42,7 @@ const Hero = () => {
           </a>
 
           <a
-            href="JAFAR_RESUME.pdf"
+            href=""
             download
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300"
           >
